@@ -1,0 +1,81 @@
+/***********************************************Question 1***********************/
+
+Creting Tables:
+
+•Faculty Table:
+
+create table faculty(
+    facultyID int PRIMARY KEY,
+    facultyName varchar(255),
+    Email varchar(255),
+    Department varchar(255)
+    
+    
+    );
+
+
+
+•Students Table:
+
+create table students(
+    StudentID int PRIMARY KEY,
+    StudentName varchar(255),
+    Email varchar(255),
+    EnrollmentYear int ,
+    FacultyID int,
+    FOREIGN KEY(FacultyID) REFERENCES faculty(FacultyID)
+    
+    );
+
+
+•Projects Table:
+
+create table projects(
+    ProjectID int PRIMARY KEY,
+    ProjectTitle varchar(255),
+    Description varchar (2055),
+    StudentID int ,
+    FacultyID int,
+    FOREIGN KEY (StudentID) REFERENCES Students (StudentID),
+    FOREIGN KEY (FacultyID) REFERENCES Faculty (FacultyID)
+    
+    
+    
+    );
+
+
+Inserting Values in Tables:
+
+•Faculty Table:
+
+insert into faculty VALUES(1 , 'Syed Dilawar Abbas' , 'dilawar.abbas@gift.edu.pk' , 'Computer Science');
+insert into faculty VALUES(2 , 'Almas Ilyas' , 'almas.ilyas@gift.edu.pk' , 'Computer Science');
+insert into faculty VALUES(3 , 'Vaneeza Shahid' , 'vaneeza.shahid@gift.edu.pk' , 'Electrical Engineering');
+insert into faculty VALUES(4 , 'Doctor Muhammad Awais' , 'm.awais@gift.edu.pk' , 'Mathematics');
+insert into faculty VALUES(5 , 'Doctor Faiza Sarfraz' , 'faiza.sarfraz@gift.edu.pk' , 'Mathematics');
+insert into faculty VALUES(6 , 'Engineer Ahmad Raza' , 'ahmad.raza@gift.edu.pk' , 'Elecrical Engineering');
+
+
+•Students Table:
+
+INSERT INTO Students VALUES (100 , 'Nayab' , 'nayab.nasir@gift.edu.pk' , 2023 , 1);
+INSERT INTO Students VALUES (200 , 'Mubarra' , 'mubarra.tariq@gift.edu.pk' , 2023 , 6);
+INSERT INTO Students VALUES (300 , 'Zainab' , 'zainab.ali@gift.edu.pk' , 2022 , 2);
+INSERT INTO Students VALUES (400 , 'Samra' , 'samra.sabir@gift.edu.pk' , 2024 , 3);
+INSERT INTO Students VALUES (500 , 'Ayeza' , 'ayeza.ahmad@gift.edu.pk' , 2024 , 4);
+INSERT INTO Students VALUES (600 , 'Kashmala' , 'kashmala.azeen@gift.edu.pk' , 2023 , 5);
+
+•Projects Table:
+
+INSERT INTO projects VALUES (111 , 'Railway Reservation System' ,'An automated railway management system for efficient booking and management of train tickets' , 100 , 1);
+INSERT INTO projects VALUES (222 , 'Food Odering System' ,'A digital Platform for streamlined food odering and delivery services' , 200 , 2);
+INSERT INTO projects VALUES (333 , 'Payroll Management System' ,'System use for managing employee salaries and payments' , 300 , 3);
+INSERT INTO projects VALUES (444 , 'Inventory Management System' ,'A system to track and manage goods and supplies within an organization' , 400 , 4);
+INSERT INTO projects VALUES (555 , 'E-Farming' ,'An online platform for efficient management and trading of agricultural products' , 500 , 5);
+INSERT INTO projects VALUES (666 , 'Hospital Management System' ,'A software system that helps hospitals organize everything from patients records to staff schedules' , 600 , 6);
+
+
+      /*********************************Question2***********************************/
+
+ALTER TABLE students
+CHANGE COLUMN Email Students_email varchar(255);
